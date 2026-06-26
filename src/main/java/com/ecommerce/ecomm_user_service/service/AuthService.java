@@ -29,17 +29,13 @@ public class AuthService {
 		if(userRepository.findByEmail(request.email()).isPresent()) {
 			throw new UserAlreadyExistsException("User already exists");
 		}
-		
-		User user = new User();
 
-		user.setName(request.name());
-		user.setEmail(request.email());
-		user.setPassword(
-		        passwordEncoder.encode(
-		                request.password()
-		        )
-		);
-		user.setRole(Role.USER);
+		User user = User.builder()
+				.name(request.name())
+				.email(request.email())
+				.password(request.password())
+				.role(Role.USER)
+				.build();
 		
 		userRepository.save(user);
 		return "User Registered Succesfully";
