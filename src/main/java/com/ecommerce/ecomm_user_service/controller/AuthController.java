@@ -1,6 +1,9 @@
 package com.ecommerce.ecomm_user_service.controller;
 
+import com.ecommerce.ecomm_user_service.dto.AuthResponse;
+import com.ecommerce.ecomm_user_service.dto.LoginRequest;
 import com.ecommerce.ecomm_user_service.dto.RegisterRequest;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -25,12 +28,18 @@ public class AuthController {
 //			 "password": "abc344
 	@PostMapping("/register")
 	public ResponseEntity<String> register(
-			@Validated
+			@Valid
 			@RequestBody
 			RegisterRequest request) {
 		String response = authService.register(request);
 		return ResponseEntity
 				.status(HttpStatus.CREATED)
 				.body(response);
+	}
+
+	@PostMapping("/login")
+	public ResponseEntity<AuthResponse> login(@Valid @RequestBody
+	                                          LoginRequest request){
+		return ResponseEntity.ok(authService.login(request));
 	}
 }
