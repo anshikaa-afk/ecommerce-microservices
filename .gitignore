@@ -1,0 +1,23 @@
+# IntelliJ
+.idea/
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# Maven
+target/
+
+# Logs
+logs/
+
+# Generated Sources
+.apt_generated/
+.apt_generated_tests/
+
+# Mac
+.DS_Store
+
+# Windows
+Thumbs.db

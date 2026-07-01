@@ -5,3 +5,32 @@
 2026-07-01T20:51:51.659+05:30  INFO 1868 --- [ecomm-user-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2026-07-01T20:51:51.661+05:30  INFO 1868 --- [ecomm-user-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2026-07-01T20:51:51.667+05:30  INFO 1868 --- [ecomm-user-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-07-01T23:22:22.108+05:30  INFO 24884 --- [ecomm-user-service] [main] c.e.e.EcommUserServiceApplicationTests   : Starting EcommUserServiceApplicationTests using Java 21.0.11 with PID 24884 (started by Lenovo in D:\JAVA\ecommerce-microservices\user-service)
+2026-07-01T23:22:22.109+05:30 DEBUG 24884 --- [ecomm-user-service] [main] c.e.e.EcommUserServiceApplicationTests   : Running with Spring Boot v3.5.15, Spring v6.2.19
+2026-07-01T23:22:22.110+05:30  INFO 24884 --- [ecomm-user-service] [main] c.e.e.EcommUserServiceApplicationTests   : No active profile set, falling back to 1 default profile: "default"
+2026-07-01T23:22:22.933+05:30  INFO 24884 --- [ecomm-user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-07-01T23:22:22.997+05:30  INFO 24884 --- [ecomm-user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 51 ms. Found 1 JPA repository interface.
+2026-07-01T23:22:23.559+05:30  INFO 24884 --- [ecomm-user-service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-07-01T23:22:23.623+05:30  INFO 24884 --- [ecomm-user-service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.53.Final
+2026-07-01T23:22:23.669+05:30  INFO 24884 --- [ecomm-user-service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-07-01T23:22:23.991+05:30  INFO 24884 --- [ecomm-user-service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-07-01T23:22:24.027+05:30  INFO 24884 --- [ecomm-user-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-07-01T23:22:24.360+05:30  INFO 24884 --- [ecomm-user-service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@46e6458d
+2026-07-01T23:22:24.363+05:30  INFO 24884 --- [ecomm-user-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-07-01T23:22:24.461+05:30  INFO 24884 --- [ecomm-user-service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.46
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-07-01T23:22:25.183+05:30  INFO 24884 --- [ecomm-user-service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-07-01T23:22:25.233+05:30  INFO 24884 --- [ecomm-user-service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-07-01T23:22:25.587+05:30  INFO 24884 --- [ecomm-user-service] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2026-07-01T23:22:25.587+05:30  WARN 24884 --- [ecomm-user-service] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-07-01T23:22:25.714+05:30  WARN 24884 --- [ecomm-user-service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-07-01T23:22:26.582+05:30  INFO 24884 --- [ecomm-user-service] [main] c.e.e.EcommUserServiceApplicationTests   : Started EcommUserServiceApplicationTests in 4.815 seconds (process running for 5.607)
+2026-07-01T23:22:27.102+05:30  INFO 24884 --- [ecomm-user-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-07-01T23:22:27.106+05:30  INFO 24884 --- [ecomm-user-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-07-01T23:22:27.115+05:30  INFO 24884 --- [ecomm-user-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
