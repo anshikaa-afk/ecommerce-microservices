@@ -1,10 +1,11 @@
 package com.ecommerce.ecomm_user_service.security;
 
+import com.ecommerce.ecomm_user_service.config.JwtProperties;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
-import org.springframework.beans.factory.annotation.Value;
+import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
@@ -15,18 +16,18 @@ import java.util.function.Function;
 
 
 @Service
+@RequiredArgsConstructor
 public class JwtService {
 
-    @Value("${jwt.secret}")
-    private String secretKey;
-    private static final long JWT_EXPIRATION = 1000 * 60 * 60 * 24;
+    private final JwtProperties jwtProperties;
+
 
     public String generateToke(UserDetails userDetails) {
         return Jwts.builder()
                 .subject(userDetails.getUsername())
                 .issuedAt(new Date())
                 .expiration(
-                        new Date(System.currentTimeMillis()+JWT_EXPIRATION)
+                        new Date(System.currentTimeMillis()+jwtProperties.getExpiration())
                 )
                 .signWith(getSigningKey())
                 .compact();
@@ -72,7 +73,7 @@ public class JwtService {
     }
 
     private Key getSigningKey() {
-        byte[] keyBytes = Decoders.BASE64.decode(secretKey);
+        byte[] keyBytes = Decoders.BASE64.decode(jwtProperties.getSecret());
 
         return Keys.hmacShaKeyFor(keyBytes);
     }

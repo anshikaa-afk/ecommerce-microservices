@@ -17,9 +17,8 @@ public class GlobalExceptionHandler {
 
 	        return ResponseEntity
 	                .status(HttpStatus.CONFLICT)
-	                .body(Map.of(
-	                        "timestamp", LocalDateTime.now(),
-	                        "message", ex.getMessage()
+	                .body(new ErrorResponse(409, "Conflict",
+							ex.getMessage(), LocalDateTime.now()
 	                ));
 	    }
 

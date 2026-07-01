@@ -1,7 +1,7 @@
 spring:
   application:
-    name: ecomm-user-service
-    
+    name: ecomm-product-service
+
   datasource:
     url: jdbc:mysql://localhost:3306/ecommerce_db
     username: root
@@ -12,5 +12,14 @@ spring:
       ddl-auto: update
     show-sql: true
 
-jwt:
-  secret: VGhpc0lzQVN1cGVyU2VjcmV0S2V5Rm9ySldUVG9rZW5HZW5lcmF0aW9uMTIzNDU2Nzg5MA==
+server:
+  port: 8081
+
+logging:
+  level:
+    root: INFO
+    com.ecommerce.product_service: DEBUG
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
