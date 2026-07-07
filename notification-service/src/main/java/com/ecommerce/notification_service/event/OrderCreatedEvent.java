@@ -3,6 +3,7 @@ package com.ecommerce.notification_service.event;
 import lombok.*;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 @Getter
 @Setter
@@ -17,4 +18,5 @@ public class OrderCreatedEvent {
 
     private BigDecimal totalAmount;
 
+    private List<OrderItemEvent> items;
 }

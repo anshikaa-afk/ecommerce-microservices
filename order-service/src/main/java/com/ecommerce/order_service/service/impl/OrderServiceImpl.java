@@ -7,6 +7,7 @@ import com.ecommerce.order_service.entity.Order;
 import com.ecommerce.order_service.entity.OrderItem;
 import com.ecommerce.order_service.entity.OrderStatus;
 import com.ecommerce.order_service.event.OrderCreatedEvent;
+import com.ecommerce.order_service.event.OrderItemEvent;
 import com.ecommerce.order_service.producer.OrderProducer;
 import com.ecommerce.order_service.repository.OrderRepository;
 import com.ecommerce.order_service.service.OrderService;
@@ -48,10 +49,20 @@ public class OrderServiceImpl implements OrderService {
         order.setOrderItems(orderItems);
         order.setTotalAmount(totalAmount);
         Order savedOrder = orderRepository.save(order);
+
+        List<OrderItemEvent> itemEvents = savedOrder.getOrderItems()
+                        .stream()
+                        .map(item -> OrderItemEvent.builder()
+                                .productId(item.getProductId())
+                                .quantity(item.getQuantity())
+                                .build())
+                        .toList();
+
         OrderCreatedEvent event = OrderCreatedEvent.builder()
                 .orderId(savedOrder.getId())
                 .userId(savedOrder.getUserId())
                 .totalAmount(savedOrder.getTotalAmount())
+                .items(itemEvents)
                 .build();
 
         orderProducer.publishOrderCreated(event);

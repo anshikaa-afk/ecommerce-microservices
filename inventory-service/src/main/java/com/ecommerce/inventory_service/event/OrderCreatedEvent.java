@@ -1,9 +1,9 @@
-package com.ecommerce.order_service.event;
+package com.ecommerce.inventory_service.event;
+
+import lombok.*;
 
 import java.math.BigDecimal;
 import java.util.List;
-
-import lombok.*;
 
 @Getter
 @Setter
@@ -11,6 +11,7 @@ import lombok.*;
 @AllArgsConstructor
 @Builder
 public class OrderCreatedEvent {
+
     private Long orderId;
 
     private Long userId;
