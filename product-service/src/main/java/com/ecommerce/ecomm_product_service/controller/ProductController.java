@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @RestController
@@ -53,8 +54,9 @@ public class ProductController {
     }
 
     @GetMapping("/search")
-    public List<ProductResponse> searchProducts(@RequestParam String keyword){
-        return productService.searchProducts(keyword);
+    public List<ProductResponse> searchProducts(@RequestParam String keyword,
+     @RequestParam(required = false) BigDecimal budget){
+        return productService.searchProducts(keyword, budget);
     }
 
     @GetMapping("/category/{categoryId}")

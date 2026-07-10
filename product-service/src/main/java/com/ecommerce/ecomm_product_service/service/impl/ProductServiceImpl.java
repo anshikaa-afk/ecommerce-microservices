@@ -12,6 +12,7 @@ import com.ecommerce.ecomm_product_service.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.util.List;
 @Service
 @RequiredArgsConstructor
@@ -82,8 +83,8 @@ public class ProductServiceImpl  implements ProductService {
     }
 
     @Override
-    public List<ProductResponse> searchProducts(String keyword) {
-        return productRepository.findByNameContainingIgnoreCase(keyword)
+    public List<ProductResponse> searchProducts(String keyword, BigDecimal budget) {
+        return  productRepository.searchProducts(keyword, budget)
                 .stream()
                 .map(this::mapToResponse)
                 .toList();

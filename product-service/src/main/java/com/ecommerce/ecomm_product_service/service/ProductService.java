@@ -3,6 +3,7 @@ package com.ecommerce.ecomm_product_service.service;
 import com.ecommerce.ecomm_product_service.dto.ProductRequest;
 import com.ecommerce.ecomm_product_service.dto.ProductResponse;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 public interface ProductService {
@@ -17,7 +18,7 @@ public interface ProductService {
 
     void deleteProduct(Long id);
 
-    List<ProductResponse> searchProducts(String keyword);
+    List<ProductResponse> searchProducts(  String keyword, BigDecimal budget);
 
     List<ProductResponse> getProductsByCategory(Long categoryId);
 }
