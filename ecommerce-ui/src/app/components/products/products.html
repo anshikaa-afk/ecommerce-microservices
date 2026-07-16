@@ -1,7 +1,9 @@
-<h2>Products</h2>
-<div *ngFor="let product of products">
-    <h3>{{ product.name }}</h3>
-    <p>{{ product.description }}</p>
-    <p> ₹{{product.price}}</p>
-    <hr>
-</div>
+<h1>I AM PRODUCTS COMPONENT</h1>
+
+<p>Length: {{ products.length }}</p>
+
+<button (click)="products = [{id:1,name:'A',description:'',price:1,stock:1,categoryId:1,categoryName:'A'}]">
+  Add From Template
+</button>
+
+<pre>{{ products | json }}</pre>

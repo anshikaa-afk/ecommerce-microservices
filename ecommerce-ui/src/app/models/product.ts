@@ -10,6 +10,7 @@ export interface Product {
 
     stock:number;
 
-    category:string;
+    categoryId: number;
+    categoryName: string;
 
 }
