@@ -1,19 +1,61 @@
 <h2>Products</h2>
 
-<p>Total Products: {{ products.length }}</p>
+<div class="product-grid">
+  @for (product of products; track product.id) {
+    <mat-card class="product-card">
 
-@for (product of products; track product.id) {
+      <mat-card-header>
+        <mat-card-title>{{ product.name }}</mat-card-title>
+        <mat-card-subtitle>{{product.categoryName}}</mat-card-subtitle>
+      </mat-card-header>
 
-  <div>
+      <img mat-card-image [src]="product.imageUrl" [alt]="product.name">
 
-    <h3>{{ product.name }}</h3>
+      <mat-card-content>
+        <p>{{ product.description }}</p>
+        <h3>{{ product.price | currency:'INR':'symbol':'1.0-0' }}</h3>
+      </mat-card-content>
 
-    <p>{{ product.description }}</p>
+      <p class="rating">
+        <mat-icon>star</mat-icon>
+        {{product.rating}}
+      </p>
+      
+      @if(product.stock > 3){
+        <div class="stock-section">
+            <span class="stock-status in-stock">
+                <mat-icon>check_circle</mat-icon>
+                In Stock
+            </span>
 
-    <p>₹ {{ product.price }}</p>
+            <span class="stock-count">
+                {{product.stock}} available
+            </span>
+        </div>
+      }@else if(product.stock > 0){
+        <div class="stock-section">
+            <span class="stock-status low-stock">
+                <mat-icon>warning</mat-icon>
+                Only {{product.stock}} left
+            </span>
+        </div>
+      }@else{
+        <div class="stock-section">
+            <span class="stock-status out-stock">
+                <mat-icon>cancel</mat-icon>
+                Out of Stock
+            </span>
+        </div>
+    }
 
-    <hr>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" 
+        [disabled]="product.stock === 0">
+            <mat-icon>shopping_cart</mat-icon>
+            Add to Cart
+        </button>
+      </mat-card-actions>
 
-  </div>
-
-}
+    </mat-card>
+  }
+</div>

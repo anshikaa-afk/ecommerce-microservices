@@ -1,0 +1,87 @@
+mat-card-content {
+    padding-top: 12px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.product-card {
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition:all .3s ease;
+}
+
+.product-card:hover {
+    transform:translateY(-8px);
+    box-shadow:0 12px 25px rgba(0,0,0,.18);
+}
+
+.product-card img {
+    height: 220px;
+    width: 100%;
+    object-fit: cover;
+    border-bottom: 1px solid #eee;
+
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #ffb300;
+    font-weight: 600;
+}
+
+.rating mat-icon {
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+}
+
+.stock-section{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:14px;
+}
+
+.stock-status{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    font-weight:600;
+    font-size:15px;
+}
+
+.stock-status mat-icon{
+    width:18px;
+    height:18px;
+    font-size:18px;
+}
+
+/* Green */
+.in-stock{
+    color:#2E7D32;
+}
+
+/* Orange */
+.low-stock{
+    color:#F57C00;
+}
+
+/* Red */
+.out-stock{
+    color:#D32F2F;
+}
+
+.stock-count{
+    color:#757575;
+    font-size:14px;
+    font-weight:500;
+}

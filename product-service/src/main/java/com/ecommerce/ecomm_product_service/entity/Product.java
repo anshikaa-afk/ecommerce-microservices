@@ -33,6 +33,8 @@ public class Product {
     @Column(nullable = false)
     private Integer stock;
 
+    private String imageUrl;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id")
     private Category category;
@@ -43,4 +45,6 @@ public class Product {
 
     @UpdateTimestamp
     private LocalDateTime updatedAt;
+
+    private Double rating;
 }

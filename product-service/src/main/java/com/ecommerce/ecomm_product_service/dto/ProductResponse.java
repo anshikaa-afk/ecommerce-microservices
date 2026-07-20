@@ -21,7 +21,11 @@ public class ProductResponse {
 
     private Integer stock;
 
+    private String imageUrl;
+
     private Long categoryId;
 
     private String categoryName;
+
+    private Double rating;
 }

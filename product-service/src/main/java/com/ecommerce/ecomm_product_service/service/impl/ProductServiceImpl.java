@@ -106,6 +106,8 @@ public class ProductServiceImpl  implements ProductService {
                 .stock(product.getStock())
                 .categoryId(product.getCategory().getId())
                 .categoryName(product.getCategory().getName())
+                .imageUrl(product.getImageUrl())
+                .rating(product.getRating())
                 .build();
     }
 }

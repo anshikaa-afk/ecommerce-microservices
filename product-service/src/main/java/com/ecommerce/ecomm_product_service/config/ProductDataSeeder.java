@@ -39,6 +39,7 @@ public class ProductDataSeeder implements CommandLineRunner {
                         .price(new BigDecimal("74999"))
                         .stock(20)
                         .category(laptop)
+                        .imageUrl("images\\lenovo-loq.jpg")
                         .build(),
 
                 Product.builder()
@@ -47,6 +48,7 @@ public class ProductDataSeeder implements CommandLineRunner {
                         .price(new BigDecimal("69999"))
                         .stock(18)
                         .category(laptop)
+                        .imageUrl("images\\acer-nitro-v.jpg")
                         .build(),
 
                 Product.builder()
@@ -55,6 +57,7 @@ public class ProductDataSeeder implements CommandLineRunner {
                         .price(new BigDecimal("65999"))
                         .stock(15)
                         .category(laptop)
+                        .imageUrl("images\\Hp-victus-15.jpg")
                         .build(),
 
                 Product.builder()
@@ -63,6 +66,7 @@ public class ProductDataSeeder implements CommandLineRunner {
                         .price(new BigDecimal("79999"))
                         .stock(30)
                         .category(mobile)
+                        .imageUrl("images\\samsung-galaxy-s25.jpg")
                         .build(),
 
                 Product.builder()
@@ -71,6 +75,7 @@ public class ProductDataSeeder implements CommandLineRunner {
                         .price(new BigDecimal("18999"))
                         .stock(12)
                         .category(monitor)
+                        .imageUrl("images\\dell-27.jpg")
                         .build()
 
         );

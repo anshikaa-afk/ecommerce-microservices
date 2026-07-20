@@ -1,0 +1,27 @@
+mat-toolbar{
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-size:22px;
+    font-weight:600;
+}
+
+.spacer{
+    flex:1;
+}
+
+a{
+    color:white;
+    text-decoration:none;
+    margin-left:12px;
+}
+
+a:hover{
+    opacity:.85;
+}
