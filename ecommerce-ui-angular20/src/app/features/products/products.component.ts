@@ -5,6 +5,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import {MatChipsModule} from '@angular/material/chips';
+import { CartService } from '../../core/services/cart';
+import { Product } from '../../shared/models/product.model';
 
 @Component({
   selector: 'app-products',
@@ -17,6 +19,7 @@ import {MatChipsModule} from '@angular/material/chips';
 export class ProductsComponent implements OnInit {
 
   private productService = inject(ProductService);
+  private cartService = inject(CartService);
 
   products: any[] = [];
 
@@ -35,5 +38,11 @@ export class ProductsComponent implements OnInit {
       });
 
   }
+
+  addToCart(product: Product){
+    this.cartService.addToCart(product);
+    console.log(this.cartService.getItems());
+  }
+  
 
 }

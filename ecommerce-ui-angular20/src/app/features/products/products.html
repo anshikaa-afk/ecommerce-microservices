@@ -50,6 +50,7 @@
 
       <mat-card-actions>
         <button mat-raised-button color="primary" 
+        (click)="addToCart(product)"
         [disabled]="product.stock === 0">
             <mat-icon>shopping_cart</mat-icon>
             Add to Cart
